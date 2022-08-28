@@ -90,3 +90,26 @@ $sliderInfra.slick({
   speed: 400,
   variableWidth: true,
 });
+
+
+var $sliderProjects = $('.slider-projects');
+
+$sliderProjects.slick({
+  slideToShow: 1,
+  slideToScroll: 1,
+  speed: 400,
+  adaptiveHeight: true,
+  variableWidth: true,
+});
+
+
+let $equipmentItem = $('.equipment-item'),
+    $equipmentImage = $('.equipment-img'),
+    $equipmentText = $('.equipment-item p');
+
+$equipmentItem.each(function(i) {
+  $(this).hover(function() {
+    $equipmentImage.eq(i).toggleClass('active');
+    $equipmentText.eq(i).toggleClass('active');
+  });
+});
