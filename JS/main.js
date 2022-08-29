@@ -1,6 +1,6 @@
 // Прогрессбар для слайдера на баннере
 $(document).ready(function () {
-  var time = 5;
+  var time = 9;
   var $sliderBanner,
     isPause,
     tick,
@@ -60,9 +60,6 @@ $(document).ready(function () {
   }
   startProgressbar();
 
-
-
-
   // Прогрессбар при прокрутке страницы
   window.onscroll = function () {
     myFunction();
@@ -77,39 +74,65 @@ $(document).ready(function () {
     var scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
   }
-});
 
+  var $sliderInfra = $(".slider-infra");
 
-
-
-var $sliderInfra = $('.slider-infra');
-
-$sliderInfra.slick({
-  slideToShow: 2,
-  slideToScroll: 2,
-  speed: 400,
-  variableWidth: true,
-});
-
-
-var $sliderProjects = $('.slider-projects');
-
-$sliderProjects.slick({
-  slideToShow: 1,
-  slideToScroll: 1,
-  speed: 400,
-  adaptiveHeight: true,
-  variableWidth: true,
-});
-
-
-let $equipmentItem = $('.equipment-item'),
-    $equipmentImage = $('.equipment-img'),
-    $equipmentText = $('.equipment-item p');
-
-$equipmentItem.each(function(i) {
-  $(this).hover(function() {
-    $equipmentImage.eq(i).toggleClass('active');
-    $equipmentText.eq(i).toggleClass('active');
+  $sliderInfra.slick({
+    slideToShow: 2,
+    slideToScroll: 2,
+    speed: 400,
+    variableWidth: true,
   });
+
+  var $sliderProjects = $(".slider-projects");
+
+  $sliderProjects.slick({
+    slideToShow: 1,
+    slideToScroll: 1,
+    speed: 400,
+    adaptiveHeight: true,
+    variableWidth: true,
+  });
+
+  let $equipmentItem = $(".equipment-item"),
+    $equipmentImage = $(".equipment-img"),
+    $equipmentText = $(".equipment-item p");
+
+  $equipmentItem.each(function (i) {
+    $(this).hover(function () {
+      $equipmentImage.eq(i).toggleClass("active");
+      $equipmentText.eq(i).toggleClass("active");
+    });
+  });
+
+  /* Прокрутка по якорям */
+  $("a[href*='#']").on("click", function (e) {
+    var anchor = $(this);
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: $(anchor.attr("href")).offset().top,
+        },
+        {
+          duration: 100,
+          easing: "swing",
+        }
+      );
+    e.preventDefault();
+    return false;
+  });
+
+
+  let $headerBurger = $(".header-burger"),
+      $headerMenu = $(".header-menu"),
+      $pseudoCircle = $(".pseudo-circle");
+
+  $headerBurger.click(function() {
+    $(this).toggleClass('active');
+    $headerMenu.toggleClass('active');
+    $pseudoCircle.toggleClass('active');
+
+  })
+  
 });

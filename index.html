@@ -35,20 +35,37 @@
             <div class="header-col_center">
                 <div class="header-burger">
                     <span></span>
-                    <span></span>
-                    <span></span>
+                    <div class="pseudo-circle"></div>
                 </div>
                 <a>меню</a>
             </div>
 
             <div class="header-col_right">
-                <a href="">Контакты</a>
+                <a href="#contacts">Контакты</a>
                 <div class="header-call_btn">
-                    заказать звонок
+                    <span>заказать звонок</span>
                 </div>
             </div>
 
         </div>
+
+        <div class="header-menu">
+            <div class="header-menu_wrapper">
+                <div class="header-menu_col">
+                    <ul class="header-menu_list">
+                        <li><a class="header-menu_list-item" href="#about">О проекте</a></li>
+                        <li><a class="header-menu_list-item" href="#infra">Инфраструктура</a></li>
+                        <li><a class="header-menu_list-item" href="#projects">Проекты домов</a></li>
+                        <li><a class="header-menu_list-item" href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="header-menu_img">
+                    <img src="/img/header_img.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
     </header>
 
     <div class="banner">
@@ -109,16 +126,18 @@
                     </svg>
                 </div>
 
-                <div class="banner-scroll_down">
-                    листайте вниз
-                </div>
+                <a href="#about">
+                    <div class="banner-scroll_down">
+                        листайте вниз
+                    </div>
+                </a>
             </div>
 
         </div>
     </div>
 
 
-    <div class="about">
+    <div class="about" id="about">
         <div class="about-top about-wrapper">
             <div class="about-top_left">
                 <span>Эко-комплекс</span>
@@ -146,7 +165,7 @@
     </div>
 
 
-    <div class="sales">
+    <div class="sales" id="sales">
         <div class="sales-wrapper">
 
             <h2 class="caption caption-center">Варианты продаж</h2>
@@ -187,7 +206,7 @@
     </div>
 
 
-    <div class="infra">
+    <div class="infra" id="infra">
         <div class="infra-wrapper">
 
             <h2 class="caption caption-center">Инфраструктура</h2>
@@ -235,7 +254,7 @@
     </div>
 
 
-    <div class="projects">
+    <div class="projects" id="projects">
         <div class="projects-wrapper">
             <h2 class="caption caption-center">Проекты домов</h2>
 
@@ -301,7 +320,7 @@
         </div>
     </div>
 
-    <div class="build">
+    <div class="build" id="build">
 
         <h2 class="caption caption-center">Как мы строим</h2>
         <div class="svg-map">
@@ -365,7 +384,7 @@
         </div>
     </div>
 
-    <div class="options">
+    <div class="options" id="options">
         <div class="options-wrapper">
             <h2 class="caption caption-center">Варианты отделки</h2>
 
@@ -426,7 +445,7 @@
     </div>
 
 
-    <div class="equipment">
+    <div class="equipment" id="equipment">
         <div class="equipment-wrapper">
             <h2 class="caption caption-center">Стандартная комплектация дома</h2>
 
@@ -476,7 +495,7 @@
         </div>
     </div>
 
-    <div class="contacts">
+    <div class="contacts" id="contacts">
         <div class="contacts-wrapper">
             <div class="contacts-block">
 
@@ -545,7 +564,6 @@
     <script src="/JS/jquery.min.js"></script>
     <script src="/JS/slick.min.js"></script>
     <script src="/JS/main.js"></script>
-
 </body>
 
 </html>
