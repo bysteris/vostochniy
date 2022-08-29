@@ -129,11 +129,14 @@ $(document).ready(function () {
   let $headerBurger = $(".header-burger"),
       $headerMenu = $(".header-menu"),
       $pseudoCircle = $(".pseudo-circle"),
-      $menuItem = $(".header-menu_list-item");
+      $menuItem = $(".header-menu_list-item"),
+      $headerImg = $(".header-menu_img");
 
   $headerBurger.click(function() {
     $(this).toggleClass('active');
     $headerMenu.toggleClass('active');
+    $headerImg.toggleClass('active');
+    $menuItem.toggleClass('active');
     
     if ($pseudoCircle.hasClass('active')) {
       $pseudoCircle.addClass('inactive');
@@ -142,6 +145,7 @@ $(document).ready(function () {
       $pseudoCircle.addClass('active');
       $pseudoCircle.removeClass('inactive');
     }
+
   })
 
   $menuItem.click(function() {
