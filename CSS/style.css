@@ -391,7 +391,7 @@ ul>li::marker {
 .scroll-progress-bar {
   height: 3px;
   background: #00a651;
-  width: 100%;
+  width: 0%;
 }
 
 .banner {}
