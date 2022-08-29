@@ -35,16 +35,14 @@ ul {
   padding-left: 1em;
 }
 
-ul > li::marker {
+ul>li::marker {
   color: #21aa50;
 }
 
 .header {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 101;
 }
 
 .header-wrapper {
@@ -62,7 +60,7 @@ ul > li::marker {
   justify-content: space-between;
   width: 100%;
   max-width: 430px;
-  z-index: 102;
+  z-index: 103;
 }
 
 .header-logo {
@@ -130,7 +128,7 @@ ul > li::marker {
   align-items: center;
   justify-content: space-between;
   min-width: 120px;
-  z-index: 102;
+  z-index: 103;
 }
 
 .header-col_center a {
@@ -149,34 +147,72 @@ ul > li::marker {
   border-radius: 50%;
   border: 1px solid transparent;
   cursor: pointer;
-  z-index: 103;
   transform: scale(1);
   transition: all 0.3s ease;
+  z-index: 103;
 }
 
 .header-burger.active {
   background-color: transparent;
-  border: 1px solid #ffffff; 
+  border: 1px solid #ffffff;
 }
 
-.pseudo-circle.active {
+.pseudo-circle {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: #00a651;
-  animation: pseudo 0.9s ease-in-out;
-  z-index: -1;
+}
+
+.pseudo-circle.inactive {
+  animation: pseudoBack 1.3s ease-in-out;
+}
+
+.pseudo-circle.active {
+  animation: pseudo 1.3s ease-in-out;
 }
 
 @keyframes pseudo {
   10% {
     transform: scale(10);
   }
+
+  20% {
+    transform: scale(20);
+  }
+
+  30% {
+    transform: scale(30);
+  }
+
+  40% {
+    transform: scale(40);
+  }
+
   50% {
     transform: scale(50);
   }
-  100% {
-    transform: scale(100);
+}
+
+@keyframes pseudoBack {
+  10% {
+    transform: scale(10);
+  }
+
+  20% {
+    transform: scale(20);
+  }
+
+  30% {
+    transform: scale(30);
+  }
+
+  40% {
+    transform: scale(40);
+  }
+
+  50% {
+    transform: scale(50);
   }
 }
 
@@ -229,6 +265,7 @@ ul > li::marker {
   transform: rotate(45deg);
   transition: all 0.6s;
 }
+
 .header-burger.active span::before {
   bottom: 0;
   transform: rotate(-45deg);
@@ -244,10 +281,15 @@ ul > li::marker {
   width: 100vw;
   height: 100vh;
   background-color: #21aa50;
+  opacity: 0;
+  transition-delay: 0.8s;
+  z-index: 99;
 }
 
 .header-menu.active {
   top: 0;
+  opacity: 1;
+  transition-delay: 0.8s;
 }
 
 .header-menu_wrapper {
@@ -289,6 +331,22 @@ ul > li::marker {
   color: #ffffff;
 }
 
+.header-menu_list .header-menu_list-item::after {
+  background-color: #ffffff;
+  display: block;
+  content: "";
+  height: 3px;
+  width: 100%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.header-menu_list .header-menu_list-item:hover::after,
+.header-menu_list .header-menu_list-item:hover::after {
+  width: 0;
+}
+
 .header-menu_img {
   position: relative;
   overflow: hidden;
@@ -310,11 +368,9 @@ ul > li::marker {
   width: 100%;
 }
 
-.banner {
-}
+.banner {}
 
-.banner-wrapper {
-}
+.banner-wrapper {}
 
 .banner-scroll_down {
   position: absolute;
@@ -342,9 +398,11 @@ ul > li::marker {
   0% {
     transform: translate(0);
   }
+
   50% {
     transform: translateY(15px);
   }
+
   100% {
     transform: translate(0);
   }
@@ -910,6 +968,7 @@ svg {
   padding: 237px 140px;
   background-image: url(/img/mask_contacts.png);
   width: 100%;
+  min-width: 50vw;
 }
 
 .contacts-information {
@@ -942,6 +1001,7 @@ svg {
   background: url(/img/photo_contacts.jpg) no-repeat;
   background-size: cover;
   width: 100%;
+  min-width: 50vw;
 }
 
 .form-feedback_contacts {
@@ -1037,6 +1097,7 @@ svg {
   border-right: 0;
   border: 1px solid #ffffff;
   padding: 15px 16.5px;
+  resize: none;
 }
 
 .form-textarea_contacts::placeholder {

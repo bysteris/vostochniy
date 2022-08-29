@@ -9,6 +9,8 @@ $(document).ready(function () {
   $sliderBanner = $(".slider-banner");
   $sliderBanner.slick({
     //variableWidth: true,
+    fade: true,
+    cssEase: 'linear',
     speed: 1000,
     draggable: true,
     adaptiveHeight: true,
@@ -126,13 +128,33 @@ $(document).ready(function () {
 
   let $headerBurger = $(".header-burger"),
       $headerMenu = $(".header-menu"),
-      $pseudoCircle = $(".pseudo-circle");
+      $pseudoCircle = $(".pseudo-circle"),
+      $menuItem = $(".header-menu_list-item");
 
   $headerBurger.click(function() {
     $(this).toggleClass('active');
     $headerMenu.toggleClass('active');
-    $pseudoCircle.toggleClass('active');
+    
+    if ($pseudoCircle.hasClass('active')) {
+      $pseudoCircle.addClass('inactive');
+      $pseudoCircle.removeClass('active');
+    } else {
+      $pseudoCircle.addClass('active');
+      $pseudoCircle.removeClass('inactive');
+    }
+  })
 
+  $menuItem.click(function() {
+    $headerBurger.toggleClass('active');
+    $headerMenu.toggleClass('active');
+    
+    if ($pseudoCircle.hasClass('active')) {
+      $pseudoCircle.addClass('inactive');
+      $pseudoCircle.removeClass('active');
+    } else {
+      $pseudoCircle.addClass('active');
+      $pseudoCircle.removeClass('inactive');
+    }
   })
   
 });
