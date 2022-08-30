@@ -134,7 +134,8 @@ $(document).ready(function () {
     $logoColor = $(".logo-color"),
     $headerColLeft = $(".header-col_left"),
     $headerColRight = $(".header-col_right"),
-    $headerCallBtn = $(".header-call_btn");
+    $headerCallBtn = $(".header-call_btn"),
+    $projectsItem = $(".projects-item");
 
   $headerBurger.click(function () {
     $(this).toggleClass("active");
@@ -220,7 +221,9 @@ $(document).ready(function () {
     }
   });
 
-
+  $projectsItem.click(function() {
+    $(this).toggleClass("active");
+  })
 
 
 });

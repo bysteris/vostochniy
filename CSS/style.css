@@ -813,6 +813,7 @@ ul > li::marker {
 }
 
 .projects-item {
+  position: relative;
   display: grid;
   align-items: start;
   justify-items: flex-start;
@@ -821,6 +822,43 @@ ul > li::marker {
   padding: 35px 38px;
   max-width: 496px;
   border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.projects-item::after,
+.projects-item::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  transition: .5s;
+}
+
+.projects-item::after {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+.projects-item::before {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.projects-item:hover::after,
+.projects-item:hover::before {
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  border-color: #21aa50;
+}
+
+.projects-item.active {
+  background: #21aa50;
+  transition: all 0.3s ease-in-out;
 }
 
 .projects-item .project-square {
@@ -829,6 +867,12 @@ ul > li::marker {
   font-weight: 800;
   line-height: 51.91px;
   color: #21aa50;
+  transition: all 0.8s ease;
+}
+
+.projects-item.active .project-square {
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
 }
 
 .slider-projects {
@@ -959,7 +1003,7 @@ ul > li::marker {
 
 .equipment-block {
   display: flex;
-  min-height: 555px;
+  min-height: calc(400px + (555 - 400) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .equipment-block_left {
@@ -976,6 +1020,7 @@ ul > li::marker {
   width: 0;
   transition: all 0.7s ease-in-out;
   overflow: hidden;
+  object-fit: cover;
 }
 
 .equipment-img:first-child {
@@ -1002,6 +1047,7 @@ ul > li::marker {
 }
 
 .equipment-item {
+  position: relative;
   display: flex;
   align-items: flex-end;
   padding: 0 30px 15px 20px;
@@ -1009,18 +1055,33 @@ ul > li::marker {
   border-bottom: 1px solid #a7a9ac;
 }
 
-.equipment-item:hover {
+.equipment-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
   background-color: #21aa50;
-  color: #ffffff;
+  transition: all .6s ease;
 }
+
+.equipment-item:hover::before {
+  height: 100%;
+  background-color: #21aa50;
+  transition: all 0.6s ease-in-out;
+} 
 
 .equipment-item p {
   font-weight: 500;
   color: #231f20;
+  z-index: 9;
+  transition: color 1s ease-in-out;
 }
 
 .equipment-item p.active {
   color: #ffffff;
+  transition: color 0.3s ease-in-out;
 }
 
 .contacts {
