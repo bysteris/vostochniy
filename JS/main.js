@@ -10,7 +10,7 @@ $(document).ready(function () {
   $sliderBanner.slick({
     //variableWidth: true,
     fade: true,
-    cssEase: 'linear',
+    cssEase: "linear",
     speed: 1000,
     draggable: true,
     adaptiveHeight: true,
@@ -125,40 +125,102 @@ $(document).ready(function () {
     return false;
   });
 
-
   let $headerBurger = $(".header-burger"),
-      $headerMenu = $(".header-menu"),
-      $pseudoCircle = $(".pseudo-circle"),
-      $menuItem = $(".header-menu_list-item"),
-      $headerImg = $(".header-menu_img");
+    $headerMenu = $(".header-menu"),
+    $pseudoCircle = $(".pseudo-circle"),
+    $menuItem = $(".header-menu_list-item"),
+    $headerImg = $(".header-menu_img"),
+    $logowhite = $(".logo-white"),
+    $logoColor = $(".logo-color"),
+    $headerColLeft = $(".header-col_left"),
+    $headerColRight = $(".header-col_right"),
+    $headerCallBtn = $(".header-call_btn");
 
-  $headerBurger.click(function() {
-    $(this).toggleClass('active');
-    $headerMenu.toggleClass('active');
-    $headerImg.toggleClass('active');
-    $menuItem.toggleClass('active');
-    
-    if ($pseudoCircle.hasClass('active')) {
-      $pseudoCircle.addClass('inactive');
-      $pseudoCircle.removeClass('active');
+  $headerBurger.click(function () {
+    $(this).toggleClass("active");
+    $headerMenu.toggleClass("active");
+    $headerImg.toggleClass("active");
+    $menuItem.toggleClass("active");
+
+
+    if ($pseudoCircle.hasClass("active")) {
+      $pseudoCircle.addClass("inactive");
+      $pseudoCircle.removeClass("active");
     } else {
-      $pseudoCircle.addClass('active');
-      $pseudoCircle.removeClass('inactive');
+      $pseudoCircle.addClass("active");
+      $pseudoCircle.removeClass("inactive");
     }
 
-  })
-
-  $menuItem.click(function() {
-    $headerBurger.toggleClass('active');
-    $headerMenu.toggleClass('active');
-    
-    if ($pseudoCircle.hasClass('active')) {
-      $pseudoCircle.addClass('inactive');
-      $pseudoCircle.removeClass('active');
-    } else {
-      $pseudoCircle.addClass('active');
-      $pseudoCircle.removeClass('inactive');
+    if ($headerMenu.hasClass("active")) {
+      $header.removeClass("active");
+      $headerColLeft.removeClass("active");
+      $headerColRight.removeClass("active");
+      $headerCallBtn.removeClass("active");
+      $logoColor.removeClass("active");
+      $logoColor.addClass("inactive");
+      $logowhite.removeClass("inactive");
+      $logowhite.addClass("active");
+    } else if ($(window).scrollTop() > 1) {
+      $header.addClass("active");
+      $headerColLeft.addClass("active");
+      $headerColRight.addClass("active");
+      $headerCallBtn.addClass("active");
+      $logoColor.addClass("active");
+      $logoColor.removeClass("inactive");
+      $logowhite.addClass("inactive");
+      $logowhite.removeClass("active");
     }
-  })
-  
+  });
+
+  $menuItem.click(function () {
+    $headerBurger.toggleClass("active");
+    $headerMenu.toggleClass("active");
+
+    if ($pseudoCircle.hasClass("active")) {
+      $pseudoCircle.addClass("inactive");
+      $pseudoCircle.removeClass("active");
+    } else {
+      $pseudoCircle.addClass("active");
+      $pseudoCircle.removeClass("inactive");
+    }
+  });
+
+  const $header = $(".header");
+  let prevScroll,
+    lastShowPos,
+    scrollChange = 1;
+
+  $(window).on("scroll", function () {
+    const scroll = $(window).scrollTop();
+
+    if (scroll > scrollChange && scroll > prevScroll) {
+      $header.addClass("scroll");
+      lastShowPos = scroll;
+    } else if (scroll <= Math.max(lastShowPos - 250, 0)) {
+      $header.removeClass("scroll");
+    }
+    prevScroll = scroll;
+
+    if (scroll > scrollChange) {
+      $header.addClass("active");
+      $headerColLeft.addClass("active");
+      $headerColRight.addClass("active");
+      $headerCallBtn.addClass("active");
+      $logowhite.addClass("inactive");
+      $logoColor.removeClass("inactive");
+      $logoColor.addClass("active");
+    } else {
+      $header.removeClass("active");
+      $headerColLeft.removeClass("active");
+      $headerColRight.removeClass("active");
+      $headerCallBtn.removeClass("active");
+      $logowhite.removeClass("inactive");
+      $logoColor.removeClass("active");
+      $logoColor.addClass("inactive");
+    }
+  });
+
+
+
+
 });

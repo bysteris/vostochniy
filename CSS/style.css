@@ -15,15 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-  background-color: #ffffff;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 100px;
-  background-color: #00a651;
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -44,7 +35,7 @@ ul {
   padding-left: 1em;
 }
 
-ul>li::marker {
+ul > li::marker {
   color: #21aa50;
 }
 
@@ -52,6 +43,16 @@ ul>li::marker {
   top: 0;
   left: 0;
   right: 0;
+  transition-duration: 1s;
+}
+
+.header.scroll {
+  margin-top: -10%;
+  transition-duration: 2s;
+}
+
+.header.active {
+  background-color: #ffffff;
 }
 
 .header-wrapper {
@@ -76,6 +77,28 @@ ul>li::marker {
   cursor: pointer;
 }
 
+.logo-white.active {
+  opacity: 1;
+}
+
+.logo-white.inactive {
+  opacity: 0;
+  transition-delay: 1s;
+}
+
+.logo-color {
+  margin-top: -62px;
+}
+
+.logo-color.active {
+  opacity: 1;
+}
+
+.logo-color.inactive {
+  opacity: 0;
+  transition-delay: 0.3s;
+}
+
 .header-col_right {
   display: flex;
   align-items: center;
@@ -93,6 +116,12 @@ ul>li::marker {
   text-decoration: none;
   letter-spacing: 0.02em;
   color: #f7f7f7;
+  transition: color 1s;
+}
+
+.header.active a {
+  color: #231f20;
+  transition: color 0.8s;
 }
 
 .header .header-col_left a::after,
@@ -104,7 +133,14 @@ ul>li::marker {
   width: 100%;
   -webkit-transition: width 0.3s ease-in-out;
   -moz--transition: width 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, background-color 1s;
+  /* transition: background-color 1s; */
+}
+
+.header .header-col_left.active a::after,
+.header .header-col_right.active a::after {
+  background-color: #231f20;
+  transition: width 0.3s ease-in-out, background-color 1s;
 }
 
 .header .header-col_left a:hover::after,
@@ -130,6 +166,15 @@ ul>li::marker {
 .header .header-call_btn:hover {
   border: 2px solid #00a651;
   transition: all 0.5s ease-in-out;
+}
+
+.header .header-call_btn.active {
+  background-color: #00a651;
+  transition-delay: 0.6s;
+}
+
+.header .header-call_btn.active:hover {
+  border: 2px solid #231f20;
 }
 
 .header-col_center {
@@ -394,9 +439,11 @@ ul>li::marker {
   width: 0%;
 }
 
-.banner {}
+.banner {
+}
 
-.banner-wrapper {}
+.banner-wrapper {
+}
 
 .banner-scroll_down {
   position: absolute;
@@ -727,7 +774,7 @@ ul>li::marker {
 
 .infra-wrapper {
   margin: 0 auto;
-  padding: 0 calc(100px + (140 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-left: calc(100px + (140 - 100) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .slider-infra {
@@ -862,7 +909,7 @@ ul>li::marker {
   width: 100%;
 }
 
-svg {
+.svg-map svg {
   position: absolute;
   left: 0;
   top: 0;
