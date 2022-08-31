@@ -880,6 +880,10 @@ ul > li::marker {
   max-width: 950px;
 }
 
+.slider-projects .slick-list {
+  width: 50vw;
+}
+
 .projects-right_block .slider-projects {
   margin-bottom: 0;
 }
@@ -990,6 +994,10 @@ ul > li::marker {
 
 .cards-item_img {
   bottom: 0;
+}
+
+.cards-item_img img {
+  width: 100%;
 }
 
 .equipment {

@@ -92,8 +92,8 @@ $(document).ready(function () {
     slideToShow: 1,
     slideToScroll: 1,
     speed: 400,
-    adaptiveHeight: true,
-    variableWidth: true,
+    // adaptiveHeight: true,
+    // variableWidth: true,
   });
 
   let $equipmentItem = $(".equipment-item"),
