@@ -1177,7 +1177,7 @@ ul > li::marker {
 }
 
 .contacts-information_item p {
-  font-size: calc(16px + (20 -16) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(16px + (20 - 16) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 400;
   color: #ffffff;
 }
@@ -1210,7 +1210,7 @@ ul > li::marker {
 .form-control_contacts {
   width: 100%;
   margin-bottom: 15px;
-  font-size: calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   text-transform: uppercase;
   line-height: 22.5px;
@@ -1271,7 +1271,7 @@ ul > li::marker {
 
 .form-checkbox_contacts p {
   margin-left: 10px;
-  font-size: calc(10px + (12 -10) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: 12px;
   line-height: 18px;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
@@ -1280,7 +1280,7 @@ ul > li::marker {
 .form-textarea_contacts {
   width: 100%;
   margin-bottom: 15px;
-  font-size: calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   text-transform: uppercase;
   line-height: 22.5px;
@@ -1301,7 +1301,7 @@ ul > li::marker {
 
 .form-btn_contacts {
   padding: 15px 16.5px;
-  font-size: calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
