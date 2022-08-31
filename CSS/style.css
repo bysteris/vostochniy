@@ -646,7 +646,7 @@ ul > li::marker {
 
 .sales-wrapper {
   margin: 0 auto;
-  padding: 0 calc(100px + (140 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding: 0 calc(150px + (279 - 150) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .caption-center {
@@ -656,18 +656,34 @@ ul > li::marker {
 
 .sales-items {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 35px;
+  grid-column-gap: 39px;
+  margin-bottom: calc(60px + (80 - 60) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
-.sales-item img {
-  width: 100%;
-  margin-bottom: 20px;
+.sales-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(350px + (395 - 350) * ((100vw - 1440px) / (1920 - 1440)));
+  
+  padding: 25px;
+  border: 1px solid #7D7D7D;
 }
 
-.sales-item h3 {
+.sales-item p {
+  font-size: calc(20px + (24 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+  color: #231F20;
+}
+
+.sales-item h1 {
+  font-size: calc(86px + (96 - 86) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 400;
-  margin-bottom: 5px;
+  line-height: 0.8em;
+  letter-spacing: -0.02em;
+  color: #00A651;
 }
 
 .form {
@@ -680,8 +696,8 @@ ul > li::marker {
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 100px;
   padding: 0 calc(150px + (277 - 150) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: calc(55px + (75 - 55) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(55px + (75 - 55) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .form .caption {
@@ -806,7 +822,9 @@ ul > li::marker {
 .projects {
   background-color: #272425;
   padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440))
+  );
 }
 
 .projects-wrapper {
@@ -847,10 +865,10 @@ ul > li::marker {
 .projects-item::after,
 .projects-item::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 0;
   height: 0;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .projects-item::after {
@@ -881,7 +899,7 @@ ul > li::marker {
 
 .projects-item .project-square {
   font-family: "Manrope", sans-serif;
-  font-size:  calc(34px + (38 - 34) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(34px + (38 - 34) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 800;
   line-height: 51.91px;
   color: #21aa50;
@@ -984,7 +1002,9 @@ ul > li::marker {
 
 .options {
   padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440))
+  );
 }
 
 .options-wrapper {
@@ -1021,7 +1041,9 @@ ul > li::marker {
 
 .equipment {
   padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440))
+  );
 }
 
 .equipment-wrapper {
@@ -1083,21 +1105,21 @@ ul > li::marker {
 }
 
 .equipment-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: 0;
   background-color: #21aa50;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
 
 .equipment-item:hover::before {
   height: 100%;
   background-color: #21aa50;
   transition: all 0.6s ease-in-out;
-} 
+}
 
 .equipment-item p {
   font-weight: 500;
@@ -1128,7 +1150,9 @@ ul > li::marker {
 .contacts-block_left {
   padding-top: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
   padding-right: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440))
+  );
   padding-left: calc(100px + (140 - 100) * ((100vw - 1440px) / (1920 - 1440)));
   background-image: url(/img/mask_contacts.png);
   width: 100%;
@@ -1163,7 +1187,9 @@ ul > li::marker {
 .contacts-block_right {
   padding-top: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
   padding-right: calc(140px + (280 - 140) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440))
+  );
   padding-left: calc(100px + (151 - 100) * ((100vw - 1440px) / (1920 - 1440)));
   background: url(/img/photo_contacts.jpg) no-repeat;
   background-size: cover;
@@ -1182,7 +1208,7 @@ ul > li::marker {
 .form-control_contacts {
   width: 100%;
   margin-bottom: 15px;
-  font-size:  calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   text-transform: uppercase;
   line-height: 22.5px;
