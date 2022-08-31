@@ -1,14 +1,16 @@
-// Прогрессбар для слайдера на баннере
 $(document).ready(function () {
-  var time = 9;
-  var $sliderBanner,
+
+
+  // Прогрессбар для слайдера на баннере
+  let time = 9;
+  let $sliderBanner,
     isPause,
     tick,
     percentTime = 0;
 
   $sliderBanner = $(".slider-banner");
+
   $sliderBanner.slick({
-    //variableWidth: true,
     fade: true,
     cssEase: "linear",
     speed: 1000,
@@ -18,6 +20,7 @@ $(document).ready(function () {
     mobileFirst: true,
     pauseOnDotsHover: true,
   });
+
   $sliderBanner.on({
     mouseenter: function () {
       isPause = false;
@@ -43,8 +46,8 @@ $(document).ready(function () {
     tick = setInterval(interval, 10);
     $rbar.fadeIn("slow");
   }
-  var $rbar = $(".circle-go");
-  var rlen = 2 * Math.PI * $rbar.attr("r");
+  let $rbar = $(".circle-go");
+  let rlen = 2 * Math.PI * $rbar.attr("r");
 
   function interval() {
     if (isPause === false) {
@@ -62,23 +65,26 @@ $(document).ready(function () {
   }
   startProgressbar();
 
+
+
   // Прогрессбар при прокрутке страницы
   window.onscroll = function () {
-    myFunction();
+    progressbarPage();
   };
 
-  function myFunction() {
-    var winScroll =
+  function progressbarPage() {
+    let winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-    var height =
+    let height =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
+    let scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
   }
 
-  var $sliderInfra = $(".slider-infra");
 
+  // Слайдер блок Инфрастуктура
+  let $sliderInfra = $(".slider-infra");
   $sliderInfra.slick({
     slideToShow: 2,
     slideToScroll: 2,
@@ -86,16 +92,24 @@ $(document).ready(function () {
     variableWidth: true,
   });
 
-  var $sliderProjects = $(".slider-projects");
 
+  // Слайдер блок Проекты домов
+  let $sliderProjects = $(".slider-projects");
   $sliderProjects.slick({
     slideToShow: 1,
     slideToScroll: 1,
     speed: 400,
-    // adaptiveHeight: true,
-    // variableWidth: true,
+    dots: true
   });
 
+  $('a[data-slide]').click(function(e) {
+    e.preventDefault();
+    let slideno = $(this).data('slide');
+    $sliderProjects.slick('slickGoTo', slideno - 1);
+  });
+
+
+  // Смена изображений по наведению блок equipment
   let $equipmentItem = $(".equipment-item"),
     $equipmentImage = $(".equipment-img"),
     $equipmentText = $(".equipment-item p");
@@ -107,7 +121,7 @@ $(document).ready(function () {
     });
   });
 
-  /* Прокрутка по якорям */
+  // Плавная прокрутка по якорям
   $("a[href*='#']").on("click", function (e) {
     var anchor = $(this);
     $("html, body")
@@ -125,6 +139,8 @@ $(document).ready(function () {
     return false;
   });
 
+
+
   let $headerBurger = $(".header-burger"),
     $headerMenu = $(".header-menu"),
     $pseudoCircle = $(".pseudo-circle"),
@@ -134,9 +150,10 @@ $(document).ready(function () {
     $logoColor = $(".logo-color"),
     $headerColLeft = $(".header-col_left"),
     $headerColRight = $(".header-col_right"),
-    $headerCallBtn = $(".header-call_btn"),
-    $projectsItem = $(".projects-item");
+    $headerCallBtn = $(".header-call_btn");
 
+
+  // Клик по меню
   $headerBurger.click(function () {
     $(this).toggleClass("active");
     $headerMenu.toggleClass("active");
@@ -173,7 +190,10 @@ $(document).ready(function () {
     }
   });
 
+
+  // Клик по пунку меню
   $menuItem.click(function () {
+    $menuItem.toggleClass("active");
     $headerBurger.toggleClass("active");
     $headerMenu.toggleClass("active");
 
@@ -186,6 +206,8 @@ $(document).ready(function () {
     }
   });
 
+
+  // Меню прячется по скроллу вниз
   const $header = $(".header");
   let prevScroll,
     lastShowPos,
@@ -221,9 +243,12 @@ $(document).ready(function () {
     }
   });
 
-  $projectsItem.click(function() {
-    $(this).toggleClass("active");
-  })
 
+  // Переключение кнопок в блоке Проекты домов
+  let $projectsItem = $(".projects-item");
+  $projectsItem.click(function() {
+    $projectsItem.removeClass("active");
+    $(this).addClass("active");
+  });
 
 });

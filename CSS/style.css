@@ -8,10 +8,10 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-size: 18px;
+  font-size: calc(16px + (18 - 16) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 28.8px;
+  line-height: 1.6em;
   overflow-x: hidden;
 }
 
@@ -22,7 +22,7 @@ header {
 }
 
 h3 {
-  font-size: 32px;
+  font-size: calc(30px + (32 - 30) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   color: #231f20;
 }
@@ -110,7 +110,7 @@ ul > li::marker {
 
 .header a {
   display: inline-block;
-  font-size: 16px;
+  font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
@@ -155,7 +155,7 @@ ul > li::marker {
   background-color: #d9d9d933;
   border: 2px solid transparent;
   border-radius: 100px;
-  font-size: 14px;
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 -1440)));
   font-weight: 500;
   text-transform: uppercase;
   color: #ffffff;
@@ -357,8 +357,9 @@ ul > li::marker {
   justify-content: center;
   align-items: center;
   width: 50vw;
+  height: 100vh;
   background: url(/img/mask_header.png) no-repeat;
-  background-position-y: 80%;
+  background-position-y: bottom;
 }
 
 .header-menu_list {
@@ -377,7 +378,7 @@ ul > li::marker {
 .header-menu_list .header-menu_list-item {
   display: inline-block;
   font-family: "Manrope", sans-serif;
-  font-size: 48px;
+  font-size: calc(40px + (48 - 40) * ((100vw - 1440px) / (1920 -1440)));
   font-weight: 800;
   text-decoration: none;
   line-height: 57.6px;
@@ -413,11 +414,14 @@ ul > li::marker {
 .header-menu_img {
   position: relative;
   overflow: hidden;
+  width: 50vw;
+  height: 100vh;
 }
 
 .header-menu_img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   transform: scale(1.5);
   transition: all 1.5s;
 }
@@ -431,6 +435,11 @@ ul > li::marker {
 .scroll-progress-container {
   width: 100%;
   height: 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .scroll-progress-bar {
@@ -555,7 +564,7 @@ ul > li::marker {
 .about {
   padding-top: calc(150px + (194 - 150) * ((100vw - 1440px) / (1920 - 1440)));
   background-color: #f7f7f7;
-  margin-bottom: 85px;
+  margin-bottom: calc(65px + (85 - 65) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .about-wrapper {
@@ -575,20 +584,25 @@ ul > li::marker {
 
 .about-top_right {
   margin-bottom: -120px;
+  width: 50vw;
+}
+
+.about-top_right img {
+  width: 100%;
 }
 
 .about-top_left span {
   font-family: "Manrope", sans-serif;
-  font-size: 15px;
+  font-size: calc(13px + (15 - 13) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 800;
   color: #000000;
 }
 
 .caption {
   font-family: "Manrope", sans-serif;
-  font-size: 54px;
+  font-size: calc(52px + (54 - 52) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 800;
-  line-height: 64.8px;
+  line-height: 1.255em;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #21aa50;
@@ -609,10 +623,17 @@ ul > li::marker {
   align-items: center;
   background-color: #ffffff;
   background-image: url(/img/mask_about.png);
+  background-repeat: no-repeat;
 }
 
 .about-bottom_left {
   padding-left: calc(280px + (401 - 280) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-right: calc(80px + (100 - 80) * ((100vw - 1440px) / (1920 - 1440)));
+  width: 50vw;
+}
+
+.about-bottom_left img {
+  width: 100%;
 }
 
 .about-bottom_right p {
@@ -620,7 +641,7 @@ ul > li::marker {
 }
 
 .sales {
-  margin-top: 120px;
+  margin-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .sales-wrapper {
@@ -645,13 +666,11 @@ ul > li::marker {
 }
 
 .sales-item h3 {
-  font-size: 32px;
   font-weight: 400;
   margin-bottom: 5px;
 }
 
 .form {
-  margin-top: 117px;
   background-image: url(/img/form_background.png);
   background-repeat: no-repeat;
 }
@@ -668,14 +687,13 @@ ul > li::marker {
 .form .caption {
   text-align: left;
   color: #ffffff;
-  line-height: 64.8px;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 .form .form-left_block p {
   color: #ffffff;
-  line-height: 17px;
+  line-height: 1.1em;
   max-width: 300px;
 }
 
@@ -690,8 +708,8 @@ ul > li::marker {
 .form-control {
   width: 390px;
   margin-bottom: 15px;
-  font-size: 18px;
-  line-height: 22.5px;
+  font-size: calc(16px + (18 - 16) * ((100vw - 1440px) / (1920 - 1440)));
+  line-height: 1.4em;
   color: #ffffff;
   background-color: transparent;
   border-top: 0;
@@ -748,15 +766,15 @@ ul > li::marker {
 
 .form-checkbox p {
   margin-left: 10px;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: calc(10px + (12 - 10) * ((100vw - 1440px) / (1920 - 1440)));
+  line-height: 1.8em;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
 }
 
 .form-btn {
   padding: 10px 15px;
-  font-size: 14px;
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -768,8 +786,8 @@ ul > li::marker {
 }
 
 .infra {
-  margin-top: 120px;
-  margin-bottom: 110px;
+  margin-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  margin-bottom: calc(90px + (110 - 90) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .infra-wrapper {
@@ -787,8 +805,8 @@ ul > li::marker {
 
 .projects {
   background-color: #272425;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .projects-wrapper {
@@ -819,7 +837,7 @@ ul > li::marker {
   justify-items: flex-start;
   grid-template-columns: repeat(2, 1fr);
   color: #ffffff;
-  padding: 35px 38px;
+  padding: 35px calc(30px + (38 - 30) * ((100vw - 1440px) / (1920 - 1440)));
   max-width: 496px;
   border: 1px solid #ffffff;
   cursor: pointer;
@@ -863,7 +881,7 @@ ul > li::marker {
 
 .projects-item .project-square {
   font-family: "Manrope", sans-serif;
-  font-size: 38px;
+  font-size:  calc(34px + (38 - 34) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 800;
   line-height: 51.91px;
   color: #21aa50;
@@ -904,7 +922,7 @@ ul > li::marker {
   align-items: center;
   width: 82px;
   height: 82px;
-  right: 60px;
+  right: 30px;
   z-index: 9;
 }
 
@@ -938,7 +956,8 @@ ul > li::marker {
 
 .build {
   background-color: #272425;
-  padding-top: 120px;
+  padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  margin-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .wrapper {
@@ -964,8 +983,8 @@ ul > li::marker {
 }
 
 .options {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .options-wrapper {
@@ -1001,8 +1020,8 @@ ul > li::marker {
 }
 
 .equipment {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .equipment-wrapper {
@@ -1107,7 +1126,10 @@ ul > li::marker {
 }
 
 .contacts-block_left {
-  padding: 237px 140px;
+  padding-top: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-right: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-left: calc(100px + (140 - 100) * ((100vw - 1440px) / (1920 - 1440)));
   background-image: url(/img/mask_contacts.png);
   width: 100%;
   min-width: 50vw;
@@ -1123,13 +1145,13 @@ ul > li::marker {
 .contacts-information_item span {
   display: block;
   margin-bottom: 25px;
-  font-size: 20px;
+  font-size: calc(16px + (20 - 16) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
   color: #ffffff;
 }
 
 .contacts-information_item p {
-  font-size: 20px;
+  font-size: calc(16px + (20 -16) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 400;
   color: #ffffff;
 }
@@ -1139,7 +1161,10 @@ ul > li::marker {
 }
 
 .contacts-block_right {
-  padding: 237px 280px 237px 151px;
+  padding-top: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-right: calc(140px + (280 - 140) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-left: calc(100px + (151 - 100) * ((100vw - 1440px) / (1920 - 1440)));
   background: url(/img/photo_contacts.jpg) no-repeat;
   background-size: cover;
   width: 100%;
@@ -1157,7 +1182,7 @@ ul > li::marker {
 .form-control_contacts {
   width: 100%;
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size:  calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   text-transform: uppercase;
   line-height: 22.5px;
@@ -1218,7 +1243,7 @@ ul > li::marker {
 
 .form-checkbox_contacts p {
   margin-left: 10px;
-  font-size: 12px;
+  font-size: calc(10px + (12 -10) * ((100vw - 1440px) / (1920 - 1440)));
   line-height: 18px;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
@@ -1227,7 +1252,7 @@ ul > li::marker {
 .form-textarea_contacts {
   width: 100%;
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   text-transform: uppercase;
   line-height: 22.5px;
@@ -1248,7 +1273,7 @@ ul > li::marker {
 
 .form-btn_contacts {
   padding: 15px 16.5px;
-  font-size: 14px;
+  font-size: calc(12px + (14 -12) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -1266,7 +1291,6 @@ footer {
   padding-bottom: 28px;
   display: flex;
   justify-content: space-between;
-  background-color: #f7f7f7;
 }
 
 footer div {
