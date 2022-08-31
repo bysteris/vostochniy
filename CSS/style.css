@@ -986,15 +986,15 @@ ul > li::marker {
   color: #ffffff;
 }
 
-.svg-map {
+.svg-build {
   position: relative;
 }
 
-.svg-map img {
+.svg-build img {
   width: 100%;
 }
 
-.svg-map svg {
+.svg-build svg {
   position: absolute;
   left: 0;
   top: 0;

@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
   // Прогрессбар для слайдера на баннере
   let time = 9;
   let $sliderBanner,
@@ -65,8 +63,6 @@ $(document).ready(function () {
   }
   startProgressbar();
 
-
-
   // Прогрессбар при прокрутке страницы
   window.onscroll = function () {
     progressbarPage();
@@ -82,7 +78,6 @@ $(document).ready(function () {
     document.getElementById("myBar").style.width = scrolled + "%";
   }
 
-
   // Слайдер блок Инфрастуктура
   let $sliderInfra = $(".slider-infra");
   $sliderInfra.slick({
@@ -92,22 +87,20 @@ $(document).ready(function () {
     variableWidth: true,
   });
 
-
   // Слайдер блок Проекты домов
   let $sliderProjects = $(".slider-projects");
   $sliderProjects.slick({
     slideToShow: 1,
     slideToScroll: 1,
     speed: 400,
-    dots: true
+    dots: true,
   });
 
-  $('a[data-slide]').click(function(e) {
+  $("a[data-slide]").click(function (e) {
     e.preventDefault();
-    let slideno = $(this).data('slide');
-    $sliderProjects.slick('slickGoTo', slideno - 1);
+    let slideno = $(this).data("slide");
+    $sliderProjects.slick("slickGoTo", slideno - 1);
   });
-
 
   // Смена изображений по наведению блок equipment
   let $equipmentItem = $(".equipment-item"),
@@ -139,8 +132,6 @@ $(document).ready(function () {
     return false;
   });
 
-
-
   let $headerBurger = $(".header-burger"),
     $headerMenu = $(".header-menu"),
     $pseudoCircle = $(".pseudo-circle"),
@@ -152,14 +143,12 @@ $(document).ready(function () {
     $headerColRight = $(".header-col_right"),
     $headerCallBtn = $(".header-call_btn");
 
-
   // Клик по меню
   $headerBurger.click(function () {
     $(this).toggleClass("active");
     $headerMenu.toggleClass("active");
     $headerImg.toggleClass("active");
     $menuItem.toggleClass("active");
-
 
     if ($pseudoCircle.hasClass("active")) {
       $pseudoCircle.addClass("inactive");
@@ -190,7 +179,6 @@ $(document).ready(function () {
     }
   });
 
-
   // Клик по пунку меню
   $menuItem.click(function () {
     $menuItem.toggleClass("active");
@@ -206,6 +194,20 @@ $(document).ready(function () {
     }
   });
 
+  // Клик по якорю Контакты, когда открыто меню
+  $('.header-col_right a').click(function () {
+    $menuItem.toggleClass("active");
+    $headerBurger.toggleClass("active");
+    $headerMenu.toggleClass("active");
+
+    if ($pseudoCircle.hasClass("active")) {
+      $pseudoCircle.addClass("inactive");
+      $pseudoCircle.removeClass("active");
+    } else {
+      $pseudoCircle.addClass("active");
+      $pseudoCircle.removeClass("inactive");
+    }
+  });
 
   // Меню прячется по скроллу вниз
   const $header = $(".header");
@@ -243,12 +245,10 @@ $(document).ready(function () {
     }
   });
 
-
   // Переключение кнопок в блоке Проекты домов
   let $projectsItem = $(".projects-item");
-  $projectsItem.click(function() {
+  $projectsItem.click(function () {
     $projectsItem.removeClass("active");
     $(this).addClass("active");
   });
-
 });
