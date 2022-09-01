@@ -117,17 +117,32 @@ $(document).ready(function () {
   // Плавная прокрутка по якорям
   $("a[href*='#']").on("click", function (e) {
     var anchor = $(this);
-    $("html, body")
-      .stop()
-      .animate(
-        {
-          scrollTop: $(anchor.attr("href")).offset().top,
-        },
-        {
-          duration: 100,
-          easing: "swing",
-        }
-      );
+
+    if ($(".header-menu").hasClass("active")) {
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: $(anchor.attr("href")).offset().top,
+          },
+          {
+            duration: 900,
+            easing: "swing",
+          }
+        );
+    } else {
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: $(anchor.attr("href")).offset().top,
+          },
+          {
+            duration: 100,
+            easing: "swing",
+          }
+        );
+    }
     e.preventDefault();
     return false;
   });
@@ -195,18 +210,12 @@ $(document).ready(function () {
   });
 
   // Клик по якорю Контакты, когда открыто меню
-  $('.header-col_right a').click(function () {
-    $menuItem.toggleClass("active");
-    $headerBurger.toggleClass("active");
-    $headerMenu.toggleClass("active");
-
-    if ($pseudoCircle.hasClass("active")) {
-      $pseudoCircle.addClass("inactive");
-      $pseudoCircle.removeClass("active");
-    } else {
-      $pseudoCircle.addClass("active");
-      $pseudoCircle.removeClass("inactive");
-    }
+  $(".header-col_right a").click(function () {
+    $(".header-burger").removeClass("active");
+    $(".pseudo-circle").removeClass("active");
+    $(".header-menu").removeClass("active");
+    $(".header-menu_list-item").removeClass("active");
+    $(".header-menu_img").removeClass("active");
   });
 
   // Меню прячется по скроллу вниз
@@ -250,5 +259,16 @@ $(document).ready(function () {
   $projectsItem.click(function () {
     $projectsItem.removeClass("active");
     $(this).addClass("active");
+  });
+
+  // Поворот плюсиков в блоке "Как мы строим"
+  let $circle = $(".circle"),
+    $text = $(".text");
+
+  $circle.each(function (i) {
+    $(this).hover(function () {
+      $circle.eq(i).toggleClass("active");
+      $text.eq(i).toggleClass("active");
+    });
   });
 });

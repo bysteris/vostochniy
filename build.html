@@ -8,60 +8,219 @@
     <title>build</title>
     <link rel="stylesheet" href="/CSS/normalize.css">
     <link rel="stylesheet" href="/CSS/style.css">
+    <script src="/JS/jquery.min.js"></script>
 </head>
 
 <body>
 
 
     <style>
-        
+        .circle {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #21AA50;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .circle span {
+            position: absolute;
+            display: block;
+            height: 2px;
+            width: 55%;
+            background-color: #FFFFFF;
+
+        }
+
+        .circle span:nth-child(1) {
+            transform: rotate(0deg);
+            transition: all 0.4s;
+        }
+
+        .circle span:nth-child(2) {
+            transform-origin: center center;
+            transform-box: fill-box;
+            transform: rotate(90deg);
+            transition: all 0.4s;
+        }
+
+        .circle.active {
+            background-color: #FFFFFF;
+        }
+
+        .circle.active span:nth-child(1) {
+            transform: rotate(-45deg);
+            background-color: #21AA50;
+            transition: all 0.4s;
+        }
+
+        .circle.active span:nth-child(2) {
+            transform: rotate(45deg);
+            background-color: #21AA50;
+            transition: all 0.4s;
+        }
+
+        .text {
+            background-color: #21AA50;
+            padding: 13px 30px;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .text p {
+            color: #FFFFFF;
+            line-height: 21.6px;
+        }
+
+        .text.active {
+            opacity: 1;
+            transition: all 0.4s ease;
+        }
     </style>
 
     <div class="build" id="build">
 
         <h2 class="caption caption-center">Как мы строим</h2>
         <div class="svg-build">
-            <img src="/img/how_build.jpg" alt="">
-            <svg xmlns="http: //www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 1923 1102" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect width="1923" height="1102" fill="url(#pattern0)" />
-                <circle cx="1327" cy="351" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M1326 352V361H1328V352H1337V350H1328V341H1326V350H1317V352H1326Z" fill="white" />
-                <circle cx="895" cy="324" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M894 325V334H896V325H905V323H896V314H894V323H885V325H894Z" fill="white" />
-                <circle cx="666" cy="123" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M665 124V133H667V124H676V122H667V113H665V122H656V124H665Z" fill="white" />
-                <circle cx="1611" cy="591" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M1610 592V601H1612V592H1621V590H1612V581H1610V590H1601V592H1610Z" fill="white" />
-                <circle cx="717" cy="652" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M716 653V662H718V653H727V651H718V642H716V651H707V653H716Z" fill="white" />
-                <circle cx="1148" cy="676" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M1147 677V686H1149V677H1158V675H1149V666H1147V675H1138V677H1147Z" fill="white" />
-                <circle cx="904" cy="857" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M903 858V867H905V858H914V856H905V847H903V856H894V858H903Z" fill="white" />
-                <rect x="1175" y="412" width="361" height="70" fill="#21AA50" />
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1923 1102"
+                width="100%" height="100%">
 
-                <circle cx="1175" cy="412" r="20" fill="#21AA50" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M1175 413.414L1181.36 419.778L1182.78 418.364L1176.41 412L1182.78 405.636L1181.36 404.222L1175 410.586L1168.64 404.222L1167.22 405.636L1173.59 412L1167.22 418.364L1168.64 419.778L1175 413.414Z"
-                    fill="#21AA50" />
+                <a class="noncursor">
+                    <foreignObject x="1327" y="283" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="1307" y="331" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
 
-                <circle cx="1175" cy="412" r="20" fill="white" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M1175 413.414L1181.36 419.778L1182.78 418.364L1176.41 412L1182.78 405.636L1181.36 404.222L1175 410.586L1168.64 404.222L1167.22 405.636L1173.59 412L1167.22 418.364L1168.64 419.778L1175 413.414Z"
-                    fill="#21AA50" />
+                <a class="noncursor">
+                    <foreignObject x="895" y="254" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="875" y="304" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
+
+                <a class="noncursor">
+                    <foreignObject x="666" y="54" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="646" y="103" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
+
+                <a class="noncursor">
+                    <foreignObject x="1251" y="591" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="1591" y="571" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
+
+                <a class="noncursor">
+                    <foreignObject x="357" y="652" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="697" y="632" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
+                
+                <a class="noncursor">
+                    <foreignObject x="1148" y="676" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="1128" y="656" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
+                
+                <a class="noncursor">
+                    <foreignObject x="904" y="857" width="361" height="70">
+                        <div class="text">
+                            <p>Здесь будет описание "Как мы строим"</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="884" y="837" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
+
+                <a class="noncursor">
+                    <foreignObject x="1175" y="412" width="361" height="70">
+                        <div class="text">
+                            <p>Энергосберегающие окна с двухкамерным стеклопакетом</p>
+                        </div>
+                    </foreignObject>
+                    <foreignObject x="1155" y="392" width="40" height="40">
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </foreignObject>
+                </a>
             </svg>
+            <img src="/img/how_build.jpg" alt="">
+
         </div>
 
     </div>
+
+
+    <script>
+        $(document).ready(function () {
+            let $circle = $('.circle'),
+                $text = $('.text');
+
+            $circle.each(function (i) {
+                $(this).hover(function () {
+                    $circle.eq(i).toggleClass('active');
+                    $text.eq(i).toggleClass('active');
+                });
+            });
+        });
+    </script>
 
 </body>
 
