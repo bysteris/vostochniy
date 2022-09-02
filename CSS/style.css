@@ -39,6 +39,30 @@ ul > li::marker {
   color: #21aa50;
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #282828;
+  transition: all 1s cubic-bezier(0.74, 0, 0.24, 0.99);
+  z-index: 10000;
+}
+
+.preloader-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+svg {
+  transform: translateZ(0);
+  shape-rendering: geometricPrecision;
+}
+
 .header {
   top: 0;
   left: 0;

@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  //Прелоадер
+  $(".preloader")
+    .delay(2100)
+    .queue(function (next) {
+      $(this).css({ top: "-100%" });
+      $("body").removeClass("active");
+      next();
+    });
+
   // Прогрессбар для слайдера на баннере
   let time = 9;
   let $sliderBanner,
@@ -274,5 +283,4 @@ $(document).ready(function () {
 
   // Валидация формы
   $("input[name=tel]").mask("+7 (999) 999-99-99");
-  
 });
