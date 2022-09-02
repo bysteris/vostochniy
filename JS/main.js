@@ -271,4 +271,8 @@ $(document).ready(function () {
       $text.eq(i).toggleClass("active");
     });
   });
+
+  // Валидация формы
+  $("input[name=tel]").mask("+7 (999) 999-99-99");
+  
 });
