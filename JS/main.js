@@ -283,4 +283,20 @@ $(document).ready(function () {
 
   // Валидация формы
   $("input[name=tel]").mask("+7 (999) 999-99-99");
+
+  //Открытие и закрытие модалки
+  let $callBtn = $(".header-call_btn"),
+    $modal = $(".modal"),
+    $modalClose = $("#modalClose"),
+    $modalWrapper = $(".modal-wrapper");
+
+  $callBtn.click(function () {
+    $modal.addClass("active");
+  });
+
+  $modalClose.click(function() {
+    $modal.removeClass("active");
+  });
+
+  
 });
