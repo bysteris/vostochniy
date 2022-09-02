@@ -1,7 +1,7 @@
 $(document).ready(function () {
   //Прелоадер
   $(".preloader")
-    .delay(2100)
+    .delay(3100)
     .queue(function (next) {
       $(this).css({ top: "-100%" });
       $("body").removeClass("active");
