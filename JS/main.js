@@ -3,7 +3,9 @@ $(document).ready(function () {
   $(".preloader")
     .delay(3100)
     .queue(function (next) {
-      $(this).css({ top: "-100%" });
+      $(this).css({
+        top: "-1000%"
+      });
       $("body").removeClass("active");
       next();
     });
@@ -23,6 +25,7 @@ $(document).ready(function () {
     speed: 1000,
     draggable: true,
     adaptiveHeight: true,
+    arrows: false,
     dots: false,
     mobileFirst: true,
     pauseOnDotsHover: true,
@@ -91,9 +94,29 @@ $(document).ready(function () {
   let $sliderInfra = $(".slider-infra");
   $sliderInfra.slick({
     slideToShow: 2,
-    slideToScroll: 2,
+    slideToScroll: 1,
     speed: 400,
+    arrows: false,
+    dots: false,
     variableWidth: true,
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slideToShow: 2,
+          slideToScroll: 1,
+          mobileFirst: true,
+          //variableWidth: false
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slideToShow: 1,
+          variableWidth: false,
+          arrows: true,
+        }
+      }
+    ]
   });
 
   // Слайдер блок Проекты домов
@@ -102,7 +125,14 @@ $(document).ready(function () {
     slideToShow: 1,
     slideToScroll: 1,
     speed: 400,
-    dots: true,
+    dots: false,
+    responsive: [{
+      breakpoint: 800,
+      settings: {
+        mobileFirst: true,
+        variableWidth: false,
+      }
+    }]
   });
 
   $("a[data-slide]").click(function (e) {
@@ -130,27 +160,21 @@ $(document).ready(function () {
     if ($(".header-menu").hasClass("active")) {
       $("html, body")
         .stop()
-        .animate(
-          {
-            scrollTop: $(anchor.attr("href")).offset().top,
-          },
-          {
-            duration: 900,
-            easing: "swing",
-          }
-        );
+        .animate({
+          scrollTop: $(anchor.attr("href")).offset().top,
+        }, {
+          duration: 900,
+          easing: "swing",
+        });
     } else {
       $("html, body")
         .stop()
-        .animate(
-          {
-            scrollTop: $(anchor.attr("href")).offset().top,
-          },
-          {
-            duration: 100,
-            easing: "swing",
-          }
-        );
+        .animate({
+          scrollTop: $(anchor.attr("href")).offset().top,
+        }, {
+          duration: 100,
+          easing: "swing",
+        });
     }
     e.preventDefault();
     return false;
@@ -294,9 +318,9 @@ $(document).ready(function () {
     $modal.addClass("active");
   });
 
-  $modalClose.click(function() {
+  $modalClose.click(function () {
     $modal.removeClass("active");
   });
 
-  
+
 });
