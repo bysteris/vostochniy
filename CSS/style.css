@@ -55,6 +55,10 @@ ul>li::marker {
   z-index: 10000;
 }
 
+.preloader.active {
+  top: -1000%;
+}
+
 .preloader-wrap {
   display: flex;
   justify-content: center;
@@ -826,6 +830,7 @@ svg {
   border-left: 0;
   border-right: 0;
   border-bottom: 1px solid #ffffff;
+  border-radius: 0%;
   padding: 0 0 10px 10px;
 }
 
@@ -940,6 +945,7 @@ svg {
   color: #231f20;
   background: #ffffff;
   border: 1px solid #ffffff;
+  border-radius: 0%;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -961,6 +967,7 @@ svg {
   color: #231f20;
   background: #ffffff;
   border: 1px solid #ffffff;
+  border-radius: 0%;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -1232,8 +1239,8 @@ svg {
 .svg-build_mobile-img {
   background-image: url(/img/svg-build_mobile.jpg);
   width: 100vw;
-  height: 100vh;
-  background-position-x: 70%;
+  height: 95vh;
+  background-position-x: 60%;
   background-size: cover;
 }
 
@@ -1533,6 +1540,7 @@ svg {
   border-left: 0;
   border-right: 0;
   border: 1px solid #ffffff;
+  border-radius: 0%;
   padding: 15px 16.5px;
 }
 
@@ -1620,6 +1628,7 @@ svg {
   border-left: 0;
   border-right: 0;
   border: 1px solid #ffffff;
+  border-radius: 0%;
   padding: 15px 16.5px;
   resize: none;
 }
@@ -1686,6 +1695,7 @@ svg {
   color: #21aa50;
   background: #ffffff;
   border: 1px solid #ffffff;
+  border-radius: 0%;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -1707,6 +1717,7 @@ svg {
   color: #21aa50;
   background: #ffffff;
   border: 1px solid #ffffff;
+  border-radius: 0%;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -1742,9 +1753,20 @@ footer {
   text-decoration: none;
 }
 
-.footer-container hr {
+footer hr {
   size: 1px;
   color: #DBDBDB;
+  margin-top: 23px;
+}
+
+.footer-container-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 50%;
+  padding-right: 50%;
+  width: 100%;
+  margin-top: 29px;
 }
 
 

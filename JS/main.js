@@ -1,14 +1,20 @@
 $(document).ready(function () {
   //Прелоадер
-  $(".preloader")
-    .delay(3100)
+  // $(".preloader")
+  //   .delay(3100)
+  //   .queue(function (next) {
+  //     $(this).css({
+  //       top: "-1000%"
+  //     });
+  //     next();
+  //   });
+  $(window).load(function() {
+    $(".preloader").delay(2000)
     .queue(function (next) {
-      $(this).css({
-        top: "-1000%"
-      });
-      $("body").removeClass("active");
-      next();
+      $(this).addClass("active")
     });
+    next()
+  });
 
   // Прогрессбар для слайдера на баннере
   let time = 9;
