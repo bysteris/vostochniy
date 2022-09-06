@@ -1,19 +1,12 @@
 $(document).ready(function () {
   //Прелоадер
-  // $(".preloader")
-  //   .delay(3100)
-  //   .queue(function (next) {
-  //     $(this).css({
-  //       top: "-1000%"
-  //     });
-  //     next();
-  //   });
-  $(window).load(function() {
-    $(".preloader").delay(2000)
-    .queue(function (next) {
-      $(this).addClass("active")
-    });
-    next()
+  $(window).load(function () {
+    $(".preloader")
+      .delay(2000)
+      .queue(function (next) {
+        $(this).addClass("active");
+      });
+    next();
   });
 
   // Прогрессбар для слайдера на баннере
@@ -105,14 +98,15 @@ $(document).ready(function () {
     arrows: false,
     dots: false,
     variableWidth: true,
-    responsive: [{
+    responsive: [
+      {
         breakpoint: 1024,
         settings: {
           slideToShow: 2,
           slideToScroll: 1,
           mobileFirst: true,
           //variableWidth: false
-        }
+        },
       },
       {
         breakpoint: 800,
@@ -120,9 +114,9 @@ $(document).ready(function () {
           slideToShow: 1,
           variableWidth: false,
           arrows: true,
-        }
-      }
-    ]
+        },
+      },
+    ],
   });
 
   // Слайдер блок Проекты домов
@@ -132,13 +126,15 @@ $(document).ready(function () {
     slideToScroll: 1,
     speed: 400,
     dots: false,
-    responsive: [{
-      breakpoint: 800,
-      settings: {
-        mobileFirst: true,
-        variableWidth: false,
-      }
-    }]
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          mobileFirst: true,
+          variableWidth: false,
+        },
+      },
+    ],
   });
 
   $("a[data-slide]").click(function (e) {
@@ -166,21 +162,27 @@ $(document).ready(function () {
     if ($(".header-menu").hasClass("active")) {
       $("html, body")
         .stop()
-        .animate({
-          scrollTop: $(anchor.attr("href")).offset().top,
-        }, {
-          duration: 900,
-          easing: "swing",
-        });
+        .animate(
+          {
+            scrollTop: $(anchor.attr("href")).offset().top,
+          },
+          {
+            duration: 900,
+            easing: "swing",
+          }
+        );
     } else {
       $("html, body")
         .stop()
-        .animate({
-          scrollTop: $(anchor.attr("href")).offset().top,
-        }, {
-          duration: 100,
-          easing: "swing",
-        });
+        .animate(
+          {
+            scrollTop: $(anchor.attr("href")).offset().top,
+          },
+          {
+            duration: 100,
+            easing: "swing",
+          }
+        );
     }
     e.preventDefault();
     return false;
@@ -328,5 +330,5 @@ $(document).ready(function () {
     $modal.removeClass("active");
   });
 
-
+  new WOW().init();
 });
