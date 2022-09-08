@@ -40,7 +40,7 @@ ul {
   padding-left: 1em;
 }
 
-ul>li::marker {
+ul > li::marker {
   color: #21aa50;
 }
 
@@ -528,9 +528,11 @@ svg {
   width: 0%;
 }
 
-.banner {}
+.banner {
+}
 
-.banner-wrapper {}
+.banner-wrapper {
+}
 
 .banner-scroll_down {
   position: absolute;
@@ -745,7 +747,7 @@ svg {
 
 .sales-wrapper {
   margin: 0 auto;
-  padding: 0 calc(150px + (279 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding: 0 calc(150px + (200 - 150) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .caption-center {
@@ -755,7 +757,7 @@ svg {
 
 .sales-items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-row-gap: 35px;
   grid-column-gap: 39px;
   margin-bottom: calc(60px + (80 - 60) * ((100vw - 1440px) / (1920 - 1440)));
@@ -765,7 +767,7 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(350px + (395 - 350) * ((100vw - 1440px) / (1920 - 1440)));
+  min-height: calc(250px + (395 - 350) * ((100vw - 1440px) / (1920 - 1440)));
 
   padding: 25px;
   border: 1px solid #7d7d7d;
@@ -1046,15 +1048,12 @@ svg {
   transition: all 0.3s;
 }
 
-
-
-
-
-
 .projects {
   background-color: #272425;
   padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440))
+  );
 }
 
 .projects-wrapper {
@@ -1325,7 +1324,9 @@ svg {
 
 .options {
   padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440))
+  );
 }
 
 .options-wrapper {
@@ -1346,14 +1347,38 @@ svg {
 }
 
 .cards-item_description {
+  flex-grow: 1;
   padding-top: 45px;
-  padding-right: auto;
+  padding-right: 30px;
   padding-left: 30px;
   padding-bottom: 30px;
 }
 
 .cards-item_description h3 {
   font-weight: 600;
+  margin-top: 0;
+  line-height: 1.17;
+}
+
+.cards .more-btn {
+  padding: 15px 16.5px;
+  margin: 40px 100px 40px 100px;
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 - 1440)));
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  color: #21aa50;
+  background: #ffffff;
+  border: 1px solid #21aa50;
+  border-radius: 0%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cards .more-btn:hover {
+  background: #21aa50;
+  color: #ffffff;
+  transition: all 0.3s;
 }
 
 .cards-item_img {
@@ -1366,7 +1391,9 @@ svg {
 
 .equipment {
   padding-top: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    100px + (120 - 100) * ((100vw - 1440px) / (1920 - 1440))
+  );
 }
 
 .equipment-wrapper {
@@ -1474,7 +1501,9 @@ svg {
 .contacts-block_left {
   padding-top: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
   padding-right: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440))
+  );
   padding-left: calc(100px + (140 - 100) * ((100vw - 1440px) / (1920 - 1440)));
   background-image: url(/img/mask_contacts.png);
   width: 100%;
@@ -1509,7 +1538,9 @@ svg {
 .contacts-block_right {
   padding-top: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
   padding-right: calc(140px + (280 - 140) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(
+    150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440))
+  );
   padding-left: calc(100px + (151 - 100) * ((100vw - 1440px) / (1920 - 1440)));
   background: url(/img/photo_contacts.jpg) no-repeat;
   background-size: cover;
@@ -1755,7 +1786,7 @@ footer {
 
 footer hr {
   size: 1px;
-  color: #DBDBDB;
+  color: #dbdbdb;
   margin-top: 23px;
 }
 
@@ -1768,7 +1799,6 @@ footer hr {
   width: 100%;
   margin-top: 29px;
 }
-
 
 .modal {
   position: fixed;
@@ -1857,7 +1887,7 @@ footer hr {
 .modal-close::after,
 .modal-close::before {
   position: absolute;
-  content: '';
+  content: "";
   display: block;
   height: 1px;
   width: 100%;
@@ -1872,4 +1902,52 @@ footer hr {
 
 .modal-close::after {
   transform: rotate(45deg);
+}
+
+/* Модалка для карточек с отделками */
+.card_modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.card_modal.active {
+  pointer-events: auto;
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+
+.card_modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card_modal-content {
+  display: block;
+  position: relative;
+  padding: 60px;
+  background-color: #282828;
+  max-width: 900px;
+}
+
+.card_modal-content h3 {
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card_modal-content > ul > li {
+  color: #ffffff;
+  font-size: calc(24px + (28 - 24) * ((100vw - 1440px) / (1920 - 1440)));
+  line-height: 1.6;
 }

@@ -316,11 +316,10 @@ $(document).ready(function () {
   // Валидация формы
   $("input[name=tel]").mask("+7 (999) 999-99-99");
 
-  //Открытие и закрытие модалки
+  // Открытие и закрытие модалки
   let $callBtn = $(".header-call_btn"),
     $modal = $(".modal"),
-    $modalClose = $("#modalClose"),
-    $modalWrapper = $(".modal-wrapper");
+    $modalClose = $("#modalClose");
 
   $callBtn.click(function () {
     $modal.addClass("active");
@@ -330,5 +329,27 @@ $(document).ready(function () {
     $modal.removeClass("active");
   });
 
+  // Инит wowAnimation
   new WOW().init();
+
+  // Модальные окна у Вариантов отделки
+  let $cardBtn = $(".more-btn"),
+    $cardModal = $(".card_modal"),
+    $cardModalClose = $(".modal-close");
+
+  $cardBtn.each(function (i) {
+    $(this).click(function() {
+      $cardModal.eq(i).addClass("active");
+      $("body").css({'overflow': 'hidden'});
+    })
+  });
+
+  $cardModalClose.each(function (i) {
+    $(this).click(function() {
+      $cardModal.eq(i).removeClass("active");
+      $("body").css({'overflow': ''});
+    })
+  });
+
+
 });

@@ -35,7 +35,7 @@
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
     $headers .='From: admin@no-reply.ru' . "\r\n";
     
-    $to = "sales@uralsgroup.ru, eliseev.georgiy@yandex.ru";
+    $to = "office@uralsgroup.ru, eliseev.georgiy@yandex.ru, sb.steris@gmail.com";
     $result = mail($to, $subject, $message, $headers);
     
     if ($result)
