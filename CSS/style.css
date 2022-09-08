@@ -787,7 +787,7 @@ svg {
 }
 
 .form {
-  background-image: url(/img/form_background.png);
+  background-image: url(/img/form_background.webp);
   background-repeat: no-repeat;
 }
 
@@ -1145,6 +1145,10 @@ svg {
   max-width: 950px;
 }
 
+.slider-projects .slide img {
+  width: 100%;
+}
+
 .slider-projects .slick-list {
   width: 50vw;
 }
@@ -1236,7 +1240,7 @@ svg {
 }
 
 .svg-build_mobile-img {
-  background-image: url(/img/svg-build_mobile.jpg);
+  background-image: url(/img/svg-build_mobile.webp);
   width: 100vw;
   height: 95vh;
   background-position-x: 60%;
@@ -1542,7 +1546,7 @@ svg {
     150px + (237 - 150) * ((100vw - 1440px) / (1920 - 1440))
   );
   padding-left: calc(100px + (151 - 100) * ((100vw - 1440px) / (1920 - 1440)));
-  background: url(/img/photo_contacts.jpg) no-repeat;
+  background: url(/img/photo_contacts.webp) no-repeat;
   background-size: cover;
   width: 100%;
   min-width: 50vw;
@@ -1836,7 +1840,7 @@ footer hr {
 }
 
 .modal-img {
-  background: url(/img/img_modal_form.jpg) center no-repeat;
+  background: url(/img/img_modal_form.webp) center no-repeat;
   background-size: cover;
   padding: 75px 98px;
 }
