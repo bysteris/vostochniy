@@ -352,4 +352,24 @@ $(document).ready(function () {
   });
 
 
+  // Цели для метрики
+  var headerCallBtn = $('.header-call_btn'),
+      headerTel = $('.header-tel'),
+      bottomTel = $('.bottom-tel');
+
+  headerCallBtn.click(() => {
+    ym(90225848,'reachGoal','modalForm')
+    console.log("headerCallBtn")
+  });
+
+  headerTel.click(() => {
+    ym(90225848,'reachGoal','headerTel')
+    console.log("headerTel")
+  });
+
+  bottomTel.click(() => {
+    ym(90225848,'reachGoal','bottomTel')
+    console.log("bottomTel")
+  })
+
 });
