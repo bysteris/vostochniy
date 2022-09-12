@@ -1145,7 +1145,7 @@ svg {
   max-width: 950px;
   /* display: none; */
   position: absolute;
-  top: -1000%;
+  top: -10000%;
 }
 
 .slider-projects:first-child {
