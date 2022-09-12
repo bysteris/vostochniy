@@ -18,10 +18,31 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            var z = null; m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+        ym(90225848, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/90225848" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
+
     <div class="preloader">
         <div class="preloader-wrap">
 
@@ -135,7 +156,7 @@
                     <img class="logo-white" src="/img/logo.svg" alt="">
                     <img class="logo-color inactive" src="/img/logo-color.svg" alt="">
                 </div>
-                <a href="tel:+73472008991" class="header-tel">
+                <a href="tel:+73472008991" class="header-tel" id="header-tel">
                     +7 (347) 200-89-91
                 </a>
             </div>
@@ -150,7 +171,7 @@
 
             <div class="header-col_right">
                 <a href="#contacts">Контакты</a>
-                <div class="header-call_btn">
+                <div class="header-call_btn" id="headerCallBtn">
                     <span>заказать звонок</span>
                 </div>
             </div>
@@ -330,12 +351,14 @@
                 </div>
                 <div class="form-right_block wow animate__animated animate__fadeInUp" data-wow-offset="150"
                     data-wow-delay="0.7s">
-                    <form action="" class="form-feedback" id="form-feedback-one" onsubmit="ym(90225848,'reachGoal','firstFormSend'); return true;">
+                    <form action="" class="form-feedback" id="form-feedback-one"
+                        onsubmit="ym(90225848,'reachGoal','firstFormSend'); return true;">
                         <input class="form-control" type="text" name="name" placeholder="Имя" required maxlength="30">
                         <input class="form-control" type="tel" name="tel" placeholder="Телефон" required>
                         <label class="form-checkbox" for="policy">
                             <input type="checkbox" name="policy" id="policy" required checked>
-                            <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку персональных данных</a></p>
+                            <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку
+                                    персональных данных</a></p>
                         </label>
                         <div class="btn-container" id="form-one_btn">
                             <div class="btn-front">
@@ -407,99 +430,111 @@
                 <div class="projects-left_block wow animate__animated animate__fadeInLeft" data-wow-offset="150"
                     data-wow-delay="0.3s">
 
-                    <a data-slide="1">
-                        <div class="projects-item active">
-                            <div class="project-square">
-                                52 м<sup>2</sup>
-                            </div>
-                            <div class="project-text">
-                                <span>Проект <br> одноэтажного дома</span>
-                            </div>
+                    <div class="projects-item wow animate__animated animate__fadeInLeft active" data-wow-offset="150"
+                        data-wow-delay="0.4s">
+                        <div class="project-square">
+                            52 м<sup>2</sup>
                         </div>
-                    </a>
-
-
-                    <a data-slide="4">
-                        <div class="projects-item wow animate__animated animate__fadeInLeft" data-wow-offset="150"
-                            data-wow-delay="0.4s">
-                            <div class="project-square">
-                                65 м<sup>2</sup>
-                            </div>
-                            <div class="project-text">
-                                <span>Проект <br> одноэтажного дома</span>
-                            </div>
+                        <div class="project-text">
+                            <span>Проект <br> одноэтажного дома</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <a data-slide="6">
-                        <div class="projects-item wow animate__animated animate__fadeInLeft" data-wow-offset="150"
-                            data-wow-delay="0.5s">
-                            <div class="project-square">
-                                100 м<sup>2</sup>
-                            </div>
-                            <div class="project-text">
-                                <span>Проект <br> одноэтажного дома</span>
-                            </div>
+                    <div class="projects-item wow animate__animated animate__fadeInLeft" data-wow-offset="150"
+                        data-wow-delay="0.4s">
+                        <div class="project-square">
+                            65 м<sup>2</sup>
                         </div>
-                    </a>
+                        <div class="project-text">
+                            <span>Проект <br> одноэтажного дома</span>
+                        </div>
+                    </div>
 
-                    <a data-slide="9">
-                        <div class="projects-item wow animate__animated animate__fadeInLeft" data-wow-offset="150"
-                            data-wow-delay="0.6s">
-                            <div class="project-square">
-                                109 м<sup>2</sup>
-                            </div>
-                            <div class="project-text">
-                                <span>Проект <br> одноэтажного дома</span>
-                            </div>
+                    <div class="projects-item wow animate__animated animate__fadeInLeft" data-wow-offset="150"
+                        data-wow-delay="0.5s">
+                        <div class="project-square">
+                            100 м<sup>2</sup>
                         </div>
-                    </a>
+                        <div class="project-text">
+                            <span>Проект <br> одноэтажного дома</span>
+                        </div>
+                    </div>
+
+                    <div class="projects-item wow animate__animated animate__fadeInLeft" data-wow-offset="150"
+                        data-wow-delay="0.6s">
+                        <div class="project-square">
+                            109 м<sup>2</sup>
+                        </div>
+                        <div class="project-text">
+                            <span>Проект <br> одноэтажного дома</span>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="projects-right_block wow animate__animated animate__fadeInUp" data-wow-offset="150"
                     data-wow-delay="0.3s">
-                    <div class="slider-projects">
-                        <!-- Планировка 52 -->
-                        <div class="slide" id="slide-1">
-                            <img src="/img/project_52_prev.webp" alt="">
-                        </div>
-                        <div class="slide" id="slide-2">
-                            <img src="/img/project_52_1.webp" alt="">
-                        </div>
-                        <div class="slide" id="slide-3">
-                            <img src="/img/project_52_2.webp" alt="">
-                        </div>
 
-                        <!-- Планировка 62 -->
-                        <div class="slide" id="slide-4">
+                    <!-- Планировка 52 -->
+                    <div class="slider-projects">
+                        <div class="slide">
                             <img src="/img/project_65_prev.webp" alt="">
                         </div>
-                        <div class="slide" id="slide-5">
+                    </div>
+                    <div class="project-download">
+                        <a href="/booklets/буклет 52.pdf" target="_blank"><span>Буклет</span></a>
+                        <a href="/booklets/буклет 52.pdf" download=""><span></span></a>
+                    </div>
+
+                    <!-- Планировка 65 -->
+                    <div class="slider-projects">
+                        <div class="slide">
+                            <img src="/img/project_65_prev.webp" alt="">
+                        </div>
+                        <div class="slide">
                             <img src="/img/project_65_1.webp" alt="">
                         </div>
+                    </div>
+                    <div class="project-download">
+                        <a href="/booklets/буклет 65.pdf" target="_blank"><span>Буклет</span></a>
+                        <a href="/booklets/буклет 65.pdf" download=""><span></span></a>
+                    </div>
 
-                        <!-- Планировка 100 -->
-                        <div class="slide" id="slide-6">
+                    <!-- Планировка 100 -->
+                    <div class="slider-projects">
+                        <div class="slide">
                             <img src="/img/project_100_prev.webp" alt="">
                         </div>
-                        <div class="slide" id="slide-7">
+                        <div class="slide">
                             <img src="/img/project_100_1.webp" alt="">
                         </div>
-                        <div class="slide" id="slide-8">
+                        <div class="slide">
                             <img src="/img/project_100_2.webp" alt="">
                         </div>
+                    </div>
+                    <div class="project-download">
+                        <a href="/booklets/буклет 100.pdf" target="_blank"><span>Буклет</span></a>
+                        <a href="/booklets/буклет 100.pdf" download=""><span></span></a>
+                    </div>
 
-                        <!-- Планировка 109 -->
-                        <div class="slide" id="slide-9">
+                    <!-- Планировка 109 -->
+                    <div class="slider-projects">
+                        <div class="slide">
                             <img src="/img/project_109_prev.webp" alt="">
                         </div>
-                        <div class="slide" id="slide-10">
+                        <div class="slide">
                             <img src="/img/project_109_1.webp" alt="">
                         </div>
-                        <div class="slide" id="slide-11">
+                        <div class="slide">
                             <img src="/img/project_109_2.webp" alt="">
                         </div>
                     </div>
+                    <div class="project-download">
+                        <a href="/booklets/буклет 109.pdf" target="_blank"><span>Буклет</span></a>
+                        <a href="/booklets/буклет 109.pdf" download=""><span></span></a>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -654,12 +689,14 @@
                 </div>
                 <div class="form-right_block wow animate__animated animate__fadeInUp" data-wow-offset="150"
                     data-wow-delay="0.7s">
-                    <form action="" class="form-feedback" id="form-feedback-two" onsubmit="ym(90225848,'reachGoal','SecondFormSend'); return true;">
+                    <form action="" class="form-feedback" id="form-feedback-two"
+                        onsubmit="ym(90225848,'reachGoal','SecondFormSend'); return true;">
                         <input class="form-control" type="text" name="name" placeholder="Имя" required maxlength="30">
                         <input class="form-control" type="tel" name="tel" placeholder="Телефон" required>
                         <label class="form-checkbox" for="policy">
                             <input type="checkbox" name="policy" id="policy" required checked>
-                            <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку персональных данных</a></p>
+                            <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку
+                                    персональных данных</a></p>
                         </label>
                         <div class="btn-container" id="form-two_btn">
                             <div class="btn-front">
@@ -882,7 +919,7 @@
                             data-wow-offset="230" data-wow-delay="0.35s">
                             <span>Офис продаж</span>
                             <p>г.Уфа, ул Достоевского 68</p>
-                            <p><a class="bottom-tel" href="tel:+73472008991">+7 (347) 200-89-91</a></p>
+                            <p><a id="bottom-tel" href="tel:+73472008991">+7 (347) 200-89-91</a></p>
                             <p><a href="mailto:office@uralsgroup.ru">office@uralsgroup.ru</a></p>
                         </div>
 
@@ -901,7 +938,8 @@
                         data-wow-delay="0.35s">заказать звонок</h2>
 
                     <form action="" class="form-feedback_contacts wow animate__animated animate__fadeInRight"
-                        data-wow-offset="230" data-wow-delay="0.35s" onsubmit="ym(90225848,'reachGoal','contactsFormSend'); return true;">
+                        data-wow-offset="230" data-wow-delay="0.35s"
+                        onsubmit="ym(90225848,'reachGoal','contactsFormSend'); return true;">
                         <input class="form-control_contacts" type="text" name="name" placeholder="Имя" required
                             maxlength="30">
                         <input class="form-control_contacts" type="tel" name="tel" placeholder="Телефон" required>
@@ -909,7 +947,8 @@
                             rows="1"></textarea>
                         <label class="form-checkbox_contacts" for="policy">
                             <input type="checkbox" name="policy" id="policy" required checked>
-                            <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку персональных данных</a></p>
+                            <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку
+                                    персональных данных</a></p>
                         </label>
                         <div class="contacts_btn-container">
                             <div class="contacts_btn-front">
@@ -932,8 +971,10 @@
         <div class="footer-container wow animate__animated animate__fadeInRight" data-wow-offset="100"
             data-wow-delay="0.3s">
             <div class="footer_logo"><a href="">ЖК Восточный, 2022</a></div>
-            <div class="footer_policy"><a href="/политика конфиденциальности ЖК восточный.docx" target="_blank">Политика конфиденциальности</a></div>
-            <div class="footer_personal-data"><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку персональных данных</a></div>
+            <div class="footer_policy"><a href="/политика конфиденциальности ЖК восточный.docx" target="_blank">Политика
+                    конфиденциальности</a></div>
+            <div class="footer_personal-data"><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие
+                    на обработку персональных данных</a></div>
             <div class="footer_bznbs"><a href="">Дизайн и разработка — <b>BEZNEBES</b></a></div>
         </div>
         <hr>
@@ -954,12 +995,14 @@
                     <h2 class="caption">заказать звонок</h2>
                     <p>Мы вам перезвоним и подробно ответим на все ваши вопросы</p>
                 </div>
-                <form action="" class="form-feedback" id="form-modal" onsubmit="ym(90225848,'reachGoal','modalFormSend'); return true;">
+                <form action="" class="form-feedback" id="form-modal"
+                    onsubmit="ym(90225848,'reachGoal','modalFormSend'); return true;">
                     <input class="form-control" type="text" name="name" placeholder="Имя" required maxlength="30">
                     <input class="form-control" type="tel" name="tel" placeholder="Телефон" required>
                     <label class="form-checkbox" for="policy">
                         <input type="checkbox" name="policy" id="policy" required checked>
-                        <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку персональных данных</a></p>
+                        <p><a href="/Согласие_на_обработку_ЖК_Восточный.pdf" target="_blank">Согласие на обработку
+                                персональных данных</a></p>
                     </label>
                     <div class="btn-container" id="form-modal_btn">
                         <div class="btn-front">
@@ -980,27 +1023,8 @@
     <script src="/JS/slick.min.js"></script>
     <script src="/JS/ajax.js"></script>
     <script src="/JS/main.js"></script>
-
     <script src="/JS/wow.min.js"></script>
 
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) { m[i] = m[i][]).push(arguments) };
-        var z = null; m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(90225848, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/90225848" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
 
     <script type="text/javascript">
         !function () {

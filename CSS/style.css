@@ -1143,6 +1143,14 @@ svg {
 .slider-projects {
   width: 100%;
   max-width: 950px;
+  /* display: none; */
+  position: absolute;
+  top: -1000%;
+}
+
+.slider-projects:first-child {
+  display: block;
+  position: relative;
 }
 
 .slider-projects .slide img {
@@ -1203,6 +1211,64 @@ svg {
   background-color: #21aa50;
   border: 1px solid #21aa50;
   transition: all 0.3s;
+}
+
+.projects-right_block {
+  position: relative;
+}
+
+.project-download {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  bottom: 5%;
+}
+
+.project-download span {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  background: #2724258c;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  cursor: pointer;
+}
+
+.project-download span:hover {
+  background: #21aa50;
+}
+
+.project-download a:last-child {
+  margin-left: 10px;
+}
+
+.project-download a:last-child span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(/img/arrow_download.svg) no-repeat center;
+  background-color: #2724258c;
+  width: 33px;
+  height: 33px;
+  padding: 0 16px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.project-download a:last-child:hover span {
+  background-color: #21aa50;
 }
 
 .wrapper {

@@ -131,7 +131,7 @@ $(document).ready(function () {
         breakpoint: 800,
         settings: {
           mobileFirst: true,
-          variableWidth: false,
+          variableWidth: true,
         },
       },
     ],
@@ -296,11 +296,17 @@ $(document).ready(function () {
   });
 
   // Переключение кнопок в блоке Проекты домов
-  let $projectsItem = $(".projects-item");
-  $projectsItem.click(function () {
-    $projectsItem.removeClass("active");
-    $(this).addClass("active");
-  });
+  let $projectsItem = $(".projects-item"),
+      $projectDownload = $(".project-download");
+
+  $projectDownload.first().css({'display': 'flex'});
+  
+  $projectsItem.click(function(){
+    $projectsItem.removeClass("active").eq($(this).index()).addClass("active");
+    // $sliderProjects.hide().eq($(this).index()).fadeIn(1500);
+    $sliderProjects.css({'position': 'absolute'}).eq($(this).index()).css({'position': 'relative'});
+    $projectDownload.hide().eq($(this).index()).css({'display': 'flex'});
+  }).eq(0).addClass("active");
 
   // Поворот плюсиков в блоке "Как мы строим"
   let $circle = $(".circle"),
@@ -338,38 +344,36 @@ $(document).ready(function () {
     $cardModalClose = $(".modal-close");
 
   $cardBtn.each(function (i) {
-    $(this).click(function() {
+    $(this).click(function () {
       $cardModal.eq(i).addClass("active");
-      $("body").css({'overflow': 'hidden'});
-    })
+      $("body").css({ overflow: "hidden" });
+    });
   });
 
   $cardModalClose.each(function (i) {
-    $(this).click(function() {
+    $(this).click(function () {
       $cardModal.eq(i).removeClass("active");
-      $("body").css({'overflow': ''});
-    })
+      $("body").css({ overflow: "" });
+    });
   });
-
 
   // Цели для метрики
-  var headerCallBtn = $('.header-call_btn'),
-      headerTel = $('.header-tel'),
-      bottomTel = $('.bottom-tel');
+  var $headerCallBtnYM = $("#headerCallBtn"),
+    $headerTel = $("#header-tel"),
+    $bottomTel = $("#bottom-tel");
 
-  headerCallBtn.click(() => {
-    ym(90225848,'reachGoal','modalForm')
-    console.log("headerCallBtn")
+  $headerCallBtnYM.click(() => {
+    ym(90225848, "reachGoal", "modalForm");
+    console.log("headerCallBtn");
   });
 
-  headerTel.click(() => {
-    ym(90225848,'reachGoal','headerTel')
-    console.log("headerTel")
+  $headerTel.click(() => {
+    ym(90225848, "reachGoal", "headerTel");
+    console.log("headerTel");
   });
 
-  bottomTel.click(() => {
-    ym(90225848,'reachGoal','bottomTel')
-    console.log("bottomTel")
-  })
-
+  $bottomTel.click(() => {
+    ym(90225848, "reachGoal", "bottomTel");
+    console.log("bottomTel");
+  });
 });
